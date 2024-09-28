@@ -7,7 +7,9 @@ export default oauthGoogleEventHandler({
   async onSuccess(event, { user }) {
     await setUserSession(event, {
       user: {
-        google: user.email,
+        username: user.login,
+        email: user.email,
+        avatar: user.avatar_url,
       },
       loggedInAt: Date.now(),
     });

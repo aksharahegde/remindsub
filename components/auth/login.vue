@@ -2,9 +2,8 @@
   <div>
     <UButton
       @click="showLoginModal"
-      label="Login"
+      label="Get started"
       color="black"
-      icon="i-heroicons-arrow-right-on-rectangle"
       trailing
     />
     <UModal v-model="isModalOpen" :ui="{ width: 'sm:max-w-sm' }">
@@ -28,11 +27,11 @@
 </template>
 <script setup lang="ts">
 const loginOptions = [
-  {
-    label: "Login with Google",
-    icon: "i-simple-icons-google",
-    to: "/auth/google",
-  },
+  // {
+  //   label: "Login with Google",
+  //   icon: "i-simple-icons-google",
+  //   to: "/auth/google",
+  // },
   {
     label: "Login with GitHub",
     icon: "i-simple-icons-github",

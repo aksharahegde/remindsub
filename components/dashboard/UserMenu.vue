@@ -37,15 +37,9 @@ const items = [
   ],
   [
     {
-      label: "Profile",
-      icon: "i-heroicons-user",
-    },
-    {
       label: "Settings",
       icon: "i-heroicons-cog-8-tooth",
     },
-  ],
-  [
     {
       label: "Sign out",
       icon: "i-heroicons-arrow-left-on-rectangle",

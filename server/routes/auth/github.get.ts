@@ -1,6 +1,5 @@
 export default oauthGitHubEventHandler({
   async onSuccess(event, { user }) {
-    console.log(user);
     await setUserSession(event, {
       user: {
         username: user.login,

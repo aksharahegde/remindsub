@@ -1,5 +1,5 @@
 <template>
-  <UContainer class="max-w-sm">
+  <UContainer :ui="{ padding: 'p-0' }">
     <DashboardNavbar />
     <NuxtLoadingIndicator />
     <slot />

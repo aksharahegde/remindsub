@@ -1,7 +1,10 @@
 export default defineAppConfig({
   ui: {
-    primary: 'green',
-    gray: 'neutral',
-    icons: ['simple-icons']
-  }
-})
+    primary: "black",
+    gray: "neutral",
+    icons: ["simple-icons", "logos"],
+    container: {
+      constrained: "max-w-sm",
+    },
+  },
+});

@@ -1,7 +1,7 @@
 {
   "version": "6",
   "dialect": "sqlite",
-  "id": "6d8e18c7-652a-4c81-bcfb-3d31d8e3f592",
+  "id": "a077c7a3-ea7a-41ba-bed7-f86ece11a104",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "tables": {
     "categories": {
@@ -217,6 +217,13 @@
           "notNull": true,
           "autoincrement": true
         },
+        "email": {
+          "name": "email",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
         "app_name": {
           "name": "app_name",
           "type": "text",
@@ -275,9 +282,9 @@
         },
         "payment_method": {
           "name": "payment_method",
-          "type": "integer",
+          "type": "text",
           "primaryKey": false,
-          "notNull": false,
+          "notNull": true,
           "autoincrement": false
         },
         "remarks": {
@@ -303,21 +310,7 @@
         }
       },
       "indexes": {},
-      "foreignKeys": {
-        "subscriptions_payment_method_payment_methods_id_fk": {
-          "name": "subscriptions_payment_method_payment_methods_id_fk",
-          "tableFrom": "subscriptions",
-          "tableTo": "payment_methods",
-          "columnsFrom": [
-            "payment_method"
-          ],
-          "columnsTo": [
-            "id"
-          ],
-          "onDelete": "no action",
-          "onUpdate": "no action"
-        }
-      },
+      "foreignKeys": {},
       "compositePrimaryKeys": {},
       "uniqueConstraints": {}
     },

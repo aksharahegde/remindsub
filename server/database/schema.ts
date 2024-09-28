@@ -21,17 +21,18 @@ const billingPeriods = ['weekly', 'monthly', 'yearly'] as const;
 
 export const subscriptions = sqliteTable('subscriptions', {
   id: integer('id').primaryKey({ autoIncrement: true }),
+  email: text('email').notNull(),
   appName: text('app_name').notNull(),
   icon: text('icon').notNull(),
-  plan: text('plan').notNull().$type<'free' | 'basic' | 'premium'>(),
+  plan: text('plan').notNull().$type<'Free' | 'Basic' | 'Premium'>(),
   amount: integer('amount').notNull(),
   currency: text('currency').notNull(),
   billingPeriod: text('billing_period').notNull().$type<typeof billingPeriods[number]>(),
   firstPaymentDate: integer("first_payment_date", { mode: "timestamp" }).notNull(),
   category: text('category').notNull(),
-  paymentMethod: integer('payment_method').references(() => paymentMethods.id),
+  paymentMethod: text('payment_method').notNull(),
   remarks: text('remarks'),
-  status: text('status').notNull().$type<'active' | 'canceled'>(),
+  status: text('status').notNull().$type<'Active' | 'Canceled'>(),
   createdAt: integer("created_at", { mode: "timestamp" }).notNull(),
 });
 

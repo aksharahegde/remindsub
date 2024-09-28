@@ -32,6 +32,7 @@ CREATE TABLE `subscription_history` (
 --> statement-breakpoint
 CREATE TABLE `subscriptions` (
 	`id` integer PRIMARY KEY AUTOINCREMENT NOT NULL,
+	`email` text NOT NULL,
 	`app_name` text NOT NULL,
 	`icon` text NOT NULL,
 	`plan` text NOT NULL,
@@ -40,11 +41,10 @@ CREATE TABLE `subscriptions` (
 	`billing_period` text NOT NULL,
 	`first_payment_date` integer NOT NULL,
 	`category` text NOT NULL,
-	`payment_method` integer,
+	`payment_method` text NOT NULL,
 	`remarks` text,
 	`status` text NOT NULL,
-	`created_at` integer NOT NULL,
-	FOREIGN KEY (`payment_method`) REFERENCES `payment_methods`(`id`) ON UPDATE no action ON DELETE no action
+	`created_at` integer NOT NULL
 );
 --> statement-breakpoint
 CREATE TABLE `users` (
