@@ -37,40 +37,36 @@
         <template #header>
           <SharedModalHeader title="Upcoming Renewals" @close="close" />
         </template>
-        <div class="px-4 py-2">
+        <div
+          class="divide-y divide-gray-100 shadow-md rounded-md overflow-hidden"
+        >
           <div
-            class="divide-y divide-gray-100 shadow-md rounded-md overflow-hidden"
+            v-for="subscription in upcomingRenewals"
+            :key="subscription.id"
+            class="flex justify-between p-2"
           >
-            <div
-              v-for="subscription in upcomingRenewals"
-              :key="subscription.id"
-              class="flex justify-between p-2"
-            >
-              <div class="flex space-x-2 items-center">
-                <DashboardSubscriptionIcon
-                  :icon="subscription.icon"
-                  :app-name="subscription.appName"
-                />
-                <div class="font-semibold">{{ subscription.appName }}</div>
+            <div class="flex space-x-2 items-center">
+              <DashboardSubscriptionIcon
+                :icon="subscription.icon"
+                :app-name="subscription.appName"
+              />
+              <div class="font-semibold">{{ subscription.appName }}</div>
+            </div>
+            <div class="flex flex-col items-end">
+              <div class="text-gray-800 font-semibold">
+                {{
+                  formatCurrency(
+                    subscription.amount,
+                    "en-IN",
+                    subscription.currency
+                  )
+                }}
               </div>
-              <div class="flex flex-col items-end">
-                <div class="text-gray-800 font-semibold">
-                  {{
-                    formatCurrency(
-                      subscription.amount,
-                      "en-IN",
-                      subscription.currency
-                    )
-                  }}
-                </div>
-                <div class="text-sm text-gray-500">
-                  {{
-                    useDateFormat(
-                      subscription.nextRenewalDate,
-                      "ddd MMM D, YYYY"
-                    ).value
-                  }}
-                </div>
+              <div class="text-sm text-gray-500">
+                {{
+                  useDateFormat(subscription.nextRenewalDate, "ddd MMM D, YYYY")
+                    .value
+                }}
               </div>
             </div>
           </div>
