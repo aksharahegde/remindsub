@@ -31,11 +31,11 @@
         <USelectMenu v-model="state.plan" :options="Object.values(Plan)" />
       </UFormGroup>
       <div class="flex items-end justify-between space-x-2">
-        <UFormGroup label="Amount" name="amount">
+        <UFormGroup label="Amount" name="amount" class="w-2/3">
           <UInput v-model="state.amount" type="number" />
         </UFormGroup>
-        <UFormGroup label="Currency" name="currency">
-          <USelect
+        <UFormGroup label="Currency" name="currency" class="w-1/3">
+          <USelectMenu
             v-model="state.currency"
             :options="Object.values(Currency)"
           />
@@ -83,7 +83,7 @@
         />
         <UButton
           color="black"
-          label="save"
+          label="Save"
           type="submit"
           class="w-1/2 justify-center"
           :loading="isSubmitting"
