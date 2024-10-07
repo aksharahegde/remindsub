@@ -1,6 +1,6 @@
 <template>
   <div
-    class="flex flex-col space-y-4 justify-center items-center px-4 py-6 bg-white min-h-screen"
+    class="flex flex-col space-y-4 justify-center items-center px-4 py-6 bg-white dark:bg-gray-900 min-h-screen"
   >
     <SharedLogo />
     <h1 class="text-2xl font-bold text-center">
@@ -15,6 +15,6 @@
     />
   </div>
 </template>
-<script setup>
+<script setup lang="ts">
 const { loggedIn } = useUserSession();
 </script>

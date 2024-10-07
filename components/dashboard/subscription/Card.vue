@@ -9,7 +9,7 @@
     </div>
     <div
       ref="target"
-      class="flex justify-between items-center z-10 bg-white space-x-2 p-2 absolute top-0 left-0 w-full h-full transition-all duration-300 ease-in-out"
+      class="flex justify-between items-center z-10 bg-white dark:bg-gray-900 space-x-2 p-2 absolute top-0 left-0 w-full h-full transition-all duration-300 ease-in-out"
       :style="{ left, opacity }"
     >
       <DashboardSubscriptionIcon

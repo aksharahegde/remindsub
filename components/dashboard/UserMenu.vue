@@ -15,6 +15,10 @@
       </div>
     </template>
 
+    <template #theme="{ item }">
+      <SharedColorMode />
+    </template>
+
     <template #item="{ item }">
       <span class="truncate">{{ item.label }}</span>
       <UIcon
@@ -34,11 +38,13 @@ const items = [
       slot: "account",
       disabled: true,
     },
+
   ],
   [
     {
-      label: "Settings",
+      label: "Theme",
       icon: "i-heroicons-cog-8-tooth",
+      slot: "theme",
     },
     {
       label: "Sign out",

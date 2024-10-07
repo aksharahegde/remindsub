@@ -1,11 +1,11 @@
 <template>
-  <div class="bg-gray-50 min-h-[calc(100vh-50px)] w-full px-4 py-2">
+  <div class="bg-gray-50 dark:bg-gray-900 min-h-[calc(100vh-50px)] w-full px-4 py-2">
     <DashboardSubscriptionButtonAdd @clicked="clicked" />
     <DashboardSubscriptionRenewalAlert :subscriptions="subscriptions" />
-    <p class="text-sm text-gray-500 py-1 my-1 text-right">
+    <p class="text-sm text-gray-500 dark:text-gray-400 py-1 my-1 text-right">
       {{ subscriptions?.length }} subscriptions
     </p>
-    <div class="divide-y divide-gray-100 shadow-md rounded-md overflow-hidden">
+    <div class="divide-y divide-gray-100 dark:divide-gray-800 shadow-md rounded-md overflow-hidden">
       <div v-for="subscription in subscriptions" :key="subscription.id">
         <DashboardSubscriptionCard
           :subscription="subscription"
