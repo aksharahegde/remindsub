@@ -1,11 +1,21 @@
-# RemindSub
-An application designed to manage your subscriptions of various services.
+# Subtrackfyi
+An application designed to track your subscriptions of various services.
 
-### Features
+## Features
 - [x] Add, edit, and manage your subscriptions
 - [x] Receive reminders for upcoming subscriptions
-- [ ] View a summary of your subscriptions
+- [ ] View a summary of your subscriptions (may be visualization?)
 - [ ] Integrate with telegram and discord for sending notifications
+
+
+## Deploy on NuxtHub with ease
+1. Import the project on [NuxtHub](https://nuxthub.com)
+2. Set the following environment variables:
+   - `NUXT_OAUTH_GITHUB_CLIENT_ID`
+   - `NUXT_OAUTH_GITHUB_CLIENT_SECRET`
+
+3. Deploy the project
+4. Done!
 
 ## Contributing
 

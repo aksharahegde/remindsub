@@ -4,25 +4,33 @@
   </NuxtLayout>
 </template>
 <script setup>
-/*
-const config = useRuntimeConfig();
-useSeoMeta({
-  ogImage: `${config.public.baseURL}/og_me.png`,
-  twitterCard: "summary_large_image",
-});
+const url = useRequestURL()
+
 useHead({
   htmlAttrs: {
-    lang: "en",
+    lang: 'en'
   },
   link: [
-    {
-      rel: "icon",
-      type: "image/png",
-      href: "/icon.png",
-    },
-  ],
+    { rel: 'icon', href: '/icon.png' },
+  ]
+})
+
+const title = "Subtrackfyi | Track your subscriptions for free"
+const description = "A free and minimal tool to track your subscriptions of any kind"
+
+useSeoMeta({
+  title,
+  description,
+  ogTitle: title,
+  ogDescription: description,
+  ogImage: `${url.origin}/og.png`,
+  ogUrl: url.origin,
+  twitterTitle: title,
+  twitterDescription: description,
+  twitterCard: 'summary_large_image',
+  twitterImage: `${url.origin}/og.png`,
+  ogLocale: 'en_US',
 });
-*/
 </script>
 <style>
 :host,
