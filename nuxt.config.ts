@@ -10,6 +10,9 @@ export default defineNuxtConfig({
     "@nuxt/fonts",
   ],
   compatibilityDate: "2024-09-22",
+  colorMode: {
+    preference: "light",
+  },
   hub: {
     database: true,
   },
