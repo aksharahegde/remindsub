@@ -27,11 +27,11 @@
 </template>
 <script setup lang="ts">
 const loginOptions = [
-  // {
-  //   label: "Login with Google",
-  //   icon: "i-simple-icons-google",
-  //   to: "/auth/google",
-  // },
+  {
+    label: "Login with Google",
+    icon: "i-simple-icons-google",
+    to: "/auth/google",
+  },
   {
     label: "Login with GitHub",
     icon: "i-simple-icons-github",
