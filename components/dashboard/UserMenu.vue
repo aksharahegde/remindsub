@@ -4,7 +4,7 @@
     :ui="{ item: { disabled: 'cursor-text select-text' } }"
     :popper="{ placement: 'bottom-start' }"
   >
-    <UAvatar :src="user?.avatar" />
+    <UAvatar :src="user?.avatar" :alt="user?.username" />
 
     <template #account="{ item }">
       <div class="text-left">

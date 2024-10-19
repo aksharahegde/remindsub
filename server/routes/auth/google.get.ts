@@ -9,7 +9,7 @@ export default defineOAuthGoogleEventHandler({
       user: {
         username: user.name,
         email: user.email,
-        avatar: user.name,
+        avatar: null,
       },
       loggedInAt: Date.now(),
     });
