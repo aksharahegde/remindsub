@@ -4,11 +4,14 @@
       <SharedModalHeader title="Add an app" @close="close" />
     </template>
     <UForm
-      class="space-y-4 overflow-y-auto max-h-[80vh] min-h-[80vh] px-4"
+      class="space-y-4 overflow-y-auto max-h-[80vh] min-h-[80vh]"
       :schema="v.safeParser(schema)"
       :state="state"
       @submit="onSubmit"
     >
+      <UFormGroup label="App Name" name="appName" class="col-span-9">
+        <UInput v-model="state.appName" />
+      </UFormGroup>
       <div class="flex items-end justify-between space-x-2">
         <UFormGroup label="Icon" name="icon" class="w-full">
           <UInput v-model="state.icon" />
@@ -24,9 +27,6 @@
           size="lg"
         />
       </div>
-      <UFormGroup label="App Name" name="appName" class="col-span-9">
-        <UInput v-model="state.appName" />
-      </UFormGroup>
       <UFormGroup label="Plan" name="plan">
         <USelectMenu v-model="state.plan" :options="Object.values(Plan)" />
       </UFormGroup>
@@ -223,32 +223,32 @@ const onSubmit = async (e: FormSubmitEvent<Schema>) => {
   --dp-range-between-border-color: var(--dp-hover-color, #f3f3f3);
 }
 .dp__theme_dark {
-    --dp-background-color: #171717;
-    --dp-text-color: #fff;
-    --dp-hover-color: #484848;
-    --dp-hover-text-color: #fff;
-    --dp-hover-icon-color: #959595;
-    --dp-primary-color: #494a4b;
-    --dp-primary-disabled-color: #61a8ea;
-    --dp-primary-text-color: #fff;
-    --dp-secondary-color: #a9a9a9;
-    --dp-border-color: #2d2d2d;
-    --dp-menu-border-color: #2d2d2d;
-    --dp-border-color-hover: #aaaeb7;
-    --dp-border-color-focus: #aaaeb7;
-    --dp-disabled-color: #737373;
-    --dp-disabled-color-text: #d0d0d0;
-    --dp-scroll-bar-background: #212121;
-    --dp-scroll-bar-color: #484848;
-    --dp-success-color: #00701a;
-    --dp-success-color-disabled: #428f59;
-    --dp-icon-color: #959595;
-    --dp-danger-color: #e53935;
-    --dp-marker-color: #e53935;
-    --dp-tooltip-color: #3e3e3e;
-    --dp-highlight-color: rgb(0 92 178 / 20%);
-    --dp-range-between-dates-background-color: var(--dp-hover-color, #484848);
-    --dp-range-between-dates-text-color: var(--dp-hover-text-color, #fff);
-    --dp-range-between-border-color: var(--dp-hover-color, #fff);
+  --dp-background-color: #171717;
+  --dp-text-color: #fff;
+  --dp-hover-color: #484848;
+  --dp-hover-text-color: #fff;
+  --dp-hover-icon-color: #959595;
+  --dp-primary-color: #494a4b;
+  --dp-primary-disabled-color: #61a8ea;
+  --dp-primary-text-color: #fff;
+  --dp-secondary-color: #a9a9a9;
+  --dp-border-color: #2d2d2d;
+  --dp-menu-border-color: #2d2d2d;
+  --dp-border-color-hover: #aaaeb7;
+  --dp-border-color-focus: #aaaeb7;
+  --dp-disabled-color: #737373;
+  --dp-disabled-color-text: #d0d0d0;
+  --dp-scroll-bar-background: #212121;
+  --dp-scroll-bar-color: #484848;
+  --dp-success-color: #00701a;
+  --dp-success-color-disabled: #428f59;
+  --dp-icon-color: #959595;
+  --dp-danger-color: #e53935;
+  --dp-marker-color: #e53935;
+  --dp-tooltip-color: #3e3e3e;
+  --dp-highlight-color: rgb(0 92 178 / 20%);
+  --dp-range-between-dates-background-color: var(--dp-hover-color, #484848);
+  --dp-range-between-dates-text-color: var(--dp-hover-text-color, #fff);
+  --dp-range-between-border-color: var(--dp-hover-color, #fff);
 }
 </style>

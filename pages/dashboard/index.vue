@@ -1,11 +1,16 @@
 <template>
-  <div class="bg-gray-50 dark:bg-gray-900 min-h-[calc(100vh-50px)] w-full px-4 py-2">
+  <div
+    class="bg-gray-50 dark:bg-gray-900 min-h-[calc(100vh-50px)] w-full px-4 py-2"
+  >
     <DashboardSubscriptionButtonAdd @clicked="clicked" />
+    <DashboardAnalyticsSpend v-if="spend" :spends="spend" />
     <DashboardSubscriptionRenewalAlert :subscriptions="subscriptions" />
     <p class="text-sm text-gray-500 dark:text-gray-400 py-1 my-1 text-right">
       {{ subscriptions?.length }} subscriptions
     </p>
-    <div class="divide-y divide-gray-100 dark:divide-gray-800 shadow-md rounded-md overflow-hidden">
+    <div
+      class="divide-y divide-gray-100 dark:divide-gray-800 shadow-md rounded-md overflow-hidden"
+    >
       <div v-for="subscription in subscriptions" :key="subscription.id">
         <DashboardSubscriptionCard
           :subscription="subscription"
@@ -18,7 +23,7 @@
       side="bottom"
       :ui="{
         height: 'min-h-[94vh]',
-        base: 'pb-8 max-w-sm mx-auto overflow-hidden',
+        base: 'pb-8 pt-4 max-w-sm mx-auto overflow-hidden',
         rounded: 'rounded-t-md',
       }"
     >
@@ -42,10 +47,12 @@ const { data: subscriptions, refresh }: any = useAsyncData(
   () => useRequestFetch()("/api/subscriptions")
 );
 
+const { data: spend, refresh: refreshSpend }: any = useAsyncData("spend", () =>
+  useRequestFetch()("/api/analytics", { params: { period: "Monthly" } as any })
+);
+
 const isSlideoverOpen = ref(false);
-const clicked = () => {
-  isSlideoverOpen.value = true;
-};
+const clicked = () => isSlideoverOpen.value = true;
 
 const slideoverClosed = (refetch: boolean = false) => {
   isSlideoverOpen.value = false;

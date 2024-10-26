@@ -6,5 +6,7 @@ export default eventHandler(async (event) => {
     .select()
     .from(tables.subscriptions)
     .where(eq(tables.subscriptions.email, user.user.email));
+
+  console.log({ subscriptions });
   return subscriptions;
 });
