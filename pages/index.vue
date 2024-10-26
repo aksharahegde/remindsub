@@ -13,7 +13,7 @@
     <div class="flex flex-col space-y-4 justify-center items-center mt-36">
       <h2 class="text-xl font-bold text-center">Its open source!</h2>
       <p class="text-center">
-        Subtrackfyi is an open source project. You can find the source code on
+        Subtrakfyi is an open source project. You can find the source code on
         <a
           href="https://github.com/aksharahegde/remindsub"
           target="_blank"
