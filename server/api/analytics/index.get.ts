@@ -26,9 +26,16 @@ async function getTotalSpend(email: string, billingPeriod: string) {
 export default eventHandler(async (event) => {
   const user: any = await getUserSession(event);
   const query = getQuery(event);
-  console.log({ query });
   const { period } = query;
-  const spend = await getTotalSpend(user.user.email, period as string);
-  console.log({ spend });
-  return spend;
+  if (!period) {
+    return [];
+  }
+
+  try {
+    const spend = await getTotalSpend(user.user.email, period as string);
+    return spend;
+  } catch (error) {
+    console.error(error);
+    return [];
+  }
 });
