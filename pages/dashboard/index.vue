@@ -3,7 +3,17 @@
     class="bg-gray-50 dark:bg-gray-900 min-h-[calc(100vh-50px)] w-full px-4 py-2"
   >
     <DashboardSubscriptionButtonAdd @clicked="clicked" />
-    <DashboardAnalyticsSpend v-if="spend" :spends="spend" />
+    <div class="flex flex-col gap-4">
+      <ClientOnly>
+        <USkeleton v-if="!spend" class="h-36" />
+        <DashboardAnalyticsSpend v-else :spends="spend" />
+      </ClientOnly>
+      <UAlert
+        icon="i-heroicons-chart-bar"
+        description="Detailed analytics coming soon"
+        :ui="{ padding: 'px-4 py-2' }"
+      />
+    </div>
     <DashboardSubscriptionRenewalAlert :subscriptions="subscriptions" />
     <p class="text-sm text-gray-500 dark:text-gray-400 py-1 my-1 text-right">
       {{ subscriptions?.length }} subscriptions
@@ -52,7 +62,7 @@ const { data: spend, refresh: refreshSpend }: any = useAsyncData("spend", () =>
 );
 
 const isSlideoverOpen = ref(false);
-const clicked = () => isSlideoverOpen.value = true;
+const clicked = () => (isSlideoverOpen.value = true);
 
 const slideoverClosed = (refetch: boolean = false) => {
   isSlideoverOpen.value = false;
