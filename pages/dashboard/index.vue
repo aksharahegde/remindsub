@@ -13,8 +13,8 @@
         description="Detailed analytics coming soon"
         :ui="{ padding: 'px-4 py-2' }"
       />
+      <DashboardSubscriptionRenewalAlert :subscriptions="subscriptions" />
     </div>
-    <DashboardSubscriptionRenewalAlert :subscriptions="subscriptions" />
     <p class="text-sm text-gray-500 dark:text-gray-400 py-1 my-1 text-right">
       {{ subscriptions?.length }} subscriptions
     </p>
